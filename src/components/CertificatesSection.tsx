@@ -11,8 +11,7 @@ const certificates = [
 ];
 
 const publications = [
-  { title: "Research Paper Title", venue: "IEEE Conference 2024", link: "#" },
-  { title: "Another Publication", venue: "ACM Journal 2023", link: "#" },
+  { title: "Multilingual Minutes of Meeting Generator for Offline Meetings", venue: "IEEE Xplore 2025", description: "Developed an AI-powered system that automatically generates structured Minutes of Meeting (MoM) from offline multilingual audio (Hindi, English, Marathi, Gujarati). The solution integrates OpenAI Whisper for accurate speech-to-text transcription, SpeechBrain for speaker diarization, and Gemini Flash 1.5 for concise summarization. It supports customizable formatting templates and enhanced speaker recognition using trained voice samples. The system significantly reduces manual effort while improving accuracy in documenting multilingual meetings across academic, corporate environments.", link: "https://ieeexplore.ieee.org/document/11336609" },
 ];
 
 const CertificateCard = ({ cert }: { cert: typeof certificates[0] }) => (
@@ -94,9 +93,12 @@ const CertificatesSection = () => {
               >
                 <div>
                   <h4 className="text-foreground font-medium group-hover:text-primary transition-colors">{pub.title}</h4>
-                  <p className="text-sm text-muted-foreground">{pub.venue}</p>
+          
+                  <p className="text-sm text-muted-foreground mb-1 ">{pub.venue}</p>
+
+                  <p className="text-sm text-muted-foreground">{pub.description}</p>
                 </div>
-                <ExternalLink size={16} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                <ExternalLink size={60} className="text-muted-foreground group-hover:text-primary transition-colors" />
               </motion.a>
             ))}
           </div>

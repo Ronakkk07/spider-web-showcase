@@ -4,23 +4,32 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
-    role: "Senior Developer",
-    company: "Company Name",
-    period: "2023 - Present",
-    description: "Led development of scalable web applications, mentored junior developers, and implemented CI/CD pipelines.",
+    role: "AWS Cloud Intern (Internship)",
+    company: " F13 Technologies",
+    period: "06/25 - 08/25",
+    description: `• Designed and deployed serverless backend microservices using Python and AWS Lambda to supporting scalable application workflows. 
+    • Implemented monitoring, telemetry, and log analysis using AWS CloudWatch to diagnose runtime errors and improve system reliability. 
+    • Collaborated with engineering teams in an Agile development environment, contributing to scalable service improvement `,
   },
   {
-    role: "Full Stack Developer",
-    company: "Company Name",
-    period: "2021 - 2023",
-    description: "Built and maintained multiple client-facing applications using React, Node.js, and cloud services.",
+    role: " Centre of Excellence Intern (Internship)",
+    company: "Anunta - Cloud Based VDI Services",
+    period: "06/24 - 08/24",
+    description: `• Participated in client calls and technical discussions, gathering requirements and 
+assisting in cloud architecture design for migration projects 
+• Supported team in cloud and VDI migrations by troubleshooting networking (DNS, 
+TCP/IP) and operating system-level issues, helping minimize downtime and service 
+disruption 
+• Proactively obtained Azure AZ-900 certification, motivated me to fill knowledge gaps as fast as 
+possible.`,
   },
   {
-    role: "Junior Developer",
-    company: "Company Name",
-    period: "2019 - 2021",
-    description: "Started my professional journey building responsive UIs and RESTful APIs.",
-  },
+    role: "Software Developer Intern (Internship)",
+    company: "Anunta - Cloud Based VDI Services",
+    period: "08/23 - 10/23",
+    description: `• Collaborated with cross-functional teams to debug and resolve application issues, tracing 
+problems across frontend, backend, and infrastructure layers 
+• Strengthened problem-solving and debugging capabilities through collaborative agile tasks.`},
 ];
 
 const ExperienceSection = () => {

@@ -10,6 +10,7 @@ import CertificatesSection from "@/components/CertificatesSection";
 import AchievementsSection from "@/components/AchievementsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import VoiceWalkthrough from "@/components/VoiceWalkthrough";
 
 const Index = () => {
   return (
@@ -27,6 +28,7 @@ const Index = () => {
         <AchievementsSection />
         <ContactSection />
       </main>
+      <VoiceWalkthrough />
       <Footer />
     </div>
   );

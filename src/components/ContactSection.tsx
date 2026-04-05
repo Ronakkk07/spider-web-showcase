@@ -38,17 +38,17 @@ const ContactSection = () => {
             </p>
 
             <div className="space-y-4 mb-8">
-              <a href="mailto:your@email.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:ronakrajput.ire@email.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Mail size={20} />
-                <span>your@email.com</span>
+                <span>ronakrajput.ire@email.com</span>
               </a>
             </div>
 
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
+              <a href="https://github.com/Ronakkk07?tab=repositories" className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
                 <Github size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
+              <a href="https://www.linkedin.com/in/ronak-rajput-a748681b3/" className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
                 <Linkedin size={18} />
               </a>
             </div>

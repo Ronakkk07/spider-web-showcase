@@ -4,19 +4,19 @@ import { GraduationCap, Calendar, MapPin } from "lucide-react";
 
 const education = [
   {
-    degree: "Master of Science in Computer Science",
-    school: "Your University Name",
-    location: "City, Country",
-    period: "2022 - 2024",
-    description: "Focused on Machine Learning, Distributed Systems, and Software Engineering. GPA: 3.9/4.0",
+    degree: "Master of Science in Cloud Computing",
+    school: "National College of Ireland",
+    location: "Dublin, Ireland",
+    period: "2025 - 2026",
+    description: "Focused on AWS Cloud Services, DevOps principles, Distributed Systems, and Software Engineering principles. GPA: 2:1 (Expected)",
     highlights: ["Research Assistant", "Dean's List", "Published 2 papers"],
   },
   {
-    degree: "Bachelor of Technology in Computer Science",
-    school: "Your College Name",
-    location: "City, Country",
-    period: "2018 - 2022",
-    description: "Strong foundation in Data Structures, Algorithms, and Full-Stack Development. GPA: 8.5/10",
+    degree: "B.Tech in Information Technology and Minors in Data Science",
+    school: "Dwarkadas Jivanlal Sanghvi College of Engineering",
+    location: "Mumbai, India",
+    period: "2021 - 2025",
+    description: "Strong foundation in Data Structures, Algorithms, Operating Systems, Databases, and Computer Networks. GPA: 8/10 (First Class Honors)",
     highlights: ["Class Topper", "Hackathon Winner", "Technical Club Lead"],
   },
 ];

@@ -3,20 +3,24 @@ import { useRef } from "react";
 
 const skillCategories = [
   {
-    title: "Frontend",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "HTML/CSS", "JavaScript"],
+    title: "Software Development",
+    skills: [ "Python", "Object-Oriented Programming (OOPS)", "Data Structures and Algorithms", "RESTful APIs", "DjangoRestFramework", "React", "pytest" ],
   },
   {
-    title: "Backend",
-    skills: ["Node.js", "Python", "Express", "Django", "PostgreSQL", "MongoDB"],
+    title: "Core Concepts",
+    skills: ["Linux Systems", "Operating Systems", "Networking (TCP/IP, DNS, Subnets)", "OSI Model", "CIDR Notation", "HTTP", "HTTPS"],
   },
   {
-    title: "DevOps & Tools",
-    skills: ["Docker", "AWS", "Git", "CI/CD", "Linux", "Kubernetes"],
+    title: "Cloud Platforms/DevOps",
+    skills: ["Docker", "AWS", "Github", "CI/CD", "Azure", "Kubernetes", "Infrastructure as a Code", "automated testing", "unit testing"],
+  },
+  {
+    title: "Databases",
+    skills: ["PostgreSQL", "MySQL", "DynamoDB", "Relational Database Design", "Redis", "Celery"],
   },
   {
     title: "Other",
-    skills: ["Machine Learning", "REST APIs", "GraphQL", "Agile", "Testing", "System Design"],
+    skills: ["Quick Learner", "Troubleshooting", "Agile", "Testing", "System Design"],
   },
 ];
 

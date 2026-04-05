@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Download, Code2 } from "lucide-react";
+import { Github, Linkedin, Download } from "lucide-react";
 import heroImage from "@/assets/hero-spider.jpg";
+import LeetCodeIcon from "@/components/LeetCodeIcon";
 
 const HeroSection = () => {
   return (
@@ -38,10 +39,10 @@ const HeroSection = () => {
             Welcome to my universe
           </p>
           <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground leading-none mb-4">
-            YOUR <span className="text-gradient-spider">NAME</span>
+            Ronak <span className="text-gradient-spider">Rajput</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
-            Full-Stack Developer · Problem Solver · Tech Enthusiast
+            Software Engineer · Cloud Engineer · Problem Solver
           </p>
         </motion.div>
 
@@ -53,7 +54,7 @@ const HeroSection = () => {
           className="flex items-center justify-center gap-4 mb-8"
         >
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/ronak-rajput-a748681b3/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-11 h-11 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
@@ -62,7 +63,7 @@ const HeroSection = () => {
             <Linkedin size={20} />
           </a>
           <a
-            href="https://github.com/yourprofile"
+            href="https://github.com/Ronakkk07?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="w-11 h-11 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
@@ -71,13 +72,13 @@ const HeroSection = () => {
             <Github size={20} />
           </a>
           <a
-            href="https://leetcode.com/yourprofile"
+            href="https://leetcode.com/u/ronakrajput1106/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-11 h-11 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
             aria-label="LeetCode"
           >
-            <Code2 size={20} />
+            <LeetCodeIcon className="h-5 w-5" />
           </a>
         </motion.div>
 

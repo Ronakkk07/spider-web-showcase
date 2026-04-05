@@ -4,17 +4,27 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Project Alpha",
-    description: "A full-stack web application with real-time features, authentication, and cloud deployment.",
-    tech: ["React", "Node.js", "PostgreSQL", "AWS"],
+    title: "SmartTrack Trip Planner",
+    description: `• Built RESTful backend services in Django integrating 4+ external APIs and AWS services 
+(Lambda, S3, DynamoDB)  
+• Implemented structured error handling and logging, reducing unresolved runtime errors by 
+40% 
+• Resolved user-reported issues by analysing backend behaviour and AWS service 
+integration` ,
+    tech: ["AWS Lambda", "S3", "DynamoDB","Django", "REST APIs", "Cloudwatch"],
     github: "#",
     live: "#",
   },
   {
-    title: "Project Beta",
-    description: "Machine learning powered analytics dashboard with interactive visualizations.",
-    tech: ["Python", "TensorFlow", "React", "D3.js"],
-    github: "#",
+    title: "Luna_WebBrowser_Agent",
+    description: `• Engineered scalable backend services in Python (Django) for assistant, reminders, shopping, 
+and user management, exposing clean REST APIs for client consumption. 
+• Optimized backend reliability by experimenting with Celery/Redis for reminder scheduling and 
+delivering a simplified, robust polling-based notification pipeline. 
+• Implemented audio processing and LLM workflows (Whisper/Gemini) as modular services, 
+logging pipeline events and failures to support monitoring and debugging. `,
+    tech: ["DjangoRestFramework", "Celery", "Redis", "Whisper STT", "LLMs", "AWS"],
+    github: "https://github.com/Ronakkk07/Luna_your_webbrowser_ai",
     live: "#",
   },
   {

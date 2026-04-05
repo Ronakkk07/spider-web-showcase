@@ -10,8 +10,8 @@ const achievements = [
   },
   {
     icon: Target,
-    title: "500+ Contributions",
-    description: "Active open source contributor with 500+ contributions on GitHub.",
+    title: "150+ Leetcode Problems Solved",
+    description: "Consistently solved algorithmic challenges to sharpen problem-solving skills.",
   },
   {
     icon: Rocket,

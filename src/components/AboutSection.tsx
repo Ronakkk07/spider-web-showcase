@@ -48,9 +48,9 @@ const AboutSection = () => {
             className="space-y-6"
           >
             {[
-              { icon: User, label: "Name", value: "Your Name" },
-              { icon: MapPin, label: "Location", value: "Your City, Country" },
-              { icon: GraduationCap, label: "Education", value: "Your Degree & University" },
+              { icon: User, label: "Name", value: "Ronak Rajput" },
+              { icon: MapPin, label: "Location", value: "Dublin, Ireland" },
+              { icon: GraduationCap, label: "Education", value: "MSc in Cloud Computing, National College of Ireland" },
             ].map((item, i) => (
               <div
                 key={i}
