@@ -36,7 +36,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="font-tech text-xs md:text-sm tracking-[0.3em] text-primary mb-4 uppercase">
-            Welcome to my universe
+            Welcome to my Multiverse
           </p>
           <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground leading-none mb-4">
             Ronak <span className="text-gradient-spider">Rajput</span>
@@ -75,10 +75,10 @@ const HeroSection = () => {
             href="https://leetcode.com/u/ronakrajput1106/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-11 h-11 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
+            className="w-30 px-4 h-11 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
             aria-label="LeetCode"
           >
-            <LeetCodeIcon className="h-5 w-5" />
+            LeetCode
           </a>
         </motion.div>
 
@@ -95,7 +95,7 @@ const HeroSection = () => {
             View My Work
           </a>
           <a
-            href="/resume.pdf"
+            href="/Ronak_Rajput_CV.pdf"
             download
             className="flex items-center gap-2 px-8 py-3 rounded-lg border border-primary/40 text-foreground font-semibold hover:bg-primary/10 transition-colors"
           >
@@ -110,7 +110,7 @@ const HeroSection = () => {
           </a>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -124,7 +124,7 @@ const HeroSection = () => {
               className="w-1.5 h-1.5 rounded-full bg-primary"
             />
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

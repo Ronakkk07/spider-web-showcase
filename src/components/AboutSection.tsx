@@ -1,72 +1,52 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { User, MapPin, GraduationCap } from "lucide-react";
 
 const AboutSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
+  // Paste your unlisted YouTube video ID here (the code after /watch?v= or /embed/)
+  const YOUTUBE_VIDEO_ID = "MgSlY9aVMPE"; 
+
   return (
-    <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-6" ref={ref}>
+    <section id="about" className="py-10 relative overflow-hidden">
+      <div className="container mx-auto px-6 max-w-5xl" ref={ref}>
+        
+        {/* Section Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
+          className="text-center mb-12"
         >
-          <p className="font-tech text-xs tracking-[0.3em] text-primary mb-2 uppercase">Who Am I</p>
-          <h2 className="font-display text-5xl md:text-6xl text-foreground mb-12">ABOUT ME</h2>
+          <p className="font-tech text-xs tracking-[0.3em] text-primary mb-2 uppercase">
+            Get To Know Me
+          </p>
+          <h2 className="font-display text-5xl md:text-6xl text-foreground">
+            ABOUT ME
+          </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              I'm a passionate developer who thrives on building innovative solutions.
-              With great power comes great responsibility — and I take that seriously
-              when it comes to crafting clean, scalable, and impactful software.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              My journey in tech has been driven by curiosity and a relentless desire
-              to learn. I specialize in full-stack development and love tackling complex
-              problems that make a difference.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies,
-              contributing to open source, or sharing knowledge with the community.
-            </p>
-          </motion.div>
+        {/* Video Wrapper */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={inView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full rounded-2xl overflow-hidden bg-card border border-border shadow-2xl relative group hover:border-primary/30 transition-all duration-5xl glow-red"
+        >
+          <div className="w-full aspect-video">
+            <iframe
+              className="w-full h-full"
+              src={`https://www.youtube.com/embed/${"MgSlY9aVMPE"}?rel=0&modestbranding=1&showinfo=0`}
+              title="Ronak Rajput - About Me Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-6"
-          >
-            {[
-              { icon: User, label: "Name", value: "Ronak Rajput" },
-              { icon: MapPin, label: "Location", value: "Dublin, Ireland" },
-              { icon: GraduationCap, label: "Education", value: "MSc in Cloud Computing, National College of Ireland" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-4 p-4 rounded-lg bg-card border border-border hover:border-primary/30 transition-colors"
-              >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <item.icon className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider">{item.label}</p>
-                  <p className="text-foreground font-medium">{item.value}</p>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
       </div>
     </section>
   );

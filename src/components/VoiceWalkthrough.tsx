@@ -93,7 +93,7 @@ const sections = [
   },
 ];
 
-const WAKE_WORD = "ronak";
+const WAKE_WORD = "Ronak";
 const COMMAND_KEYWORDS = ["walkthrough", "walk through", "tour", "portfolio", "sections"];
 
 const VoiceWalkthrough = () => {
