@@ -7,9 +7,12 @@ const experiences = [
     role: "AWS Cloud Intern (Internship)",
     company: " F13 Technologies",
     period: "06/25 - 08/25",
-    description: `• Designed and deployed serverless backend microservices using Python and AWS Lambda to supporting scalable application workflows. 
-    • Implemented monitoring, telemetry, and log analysis using AWS CloudWatch to diagnose runtime errors and improve system reliability. 
-    • Collaborated with engineering teams in an Agile development environment, contributing to scalable service improvement `,
+    description: `• Designed and deployed serverless backend microservices using Python and AWS Lambda 
+supporting scalable application workflows.  
+    • Implemented monitoring and logging using AWS CloudWatch, improving system observability 
+and reducing time to debug runtime issues.  
+    • Collaborated in an Agile team to enhance backend service reliability through iterative fixes, 
+testing, and deployment improvements.  `,
   },
   {
     role: " Centre of Excellence Intern (Internship)",
@@ -27,9 +30,11 @@ possible.`,
     role: "Software Developer Intern (Internship)",
     company: "Anunta - Cloud Based VDI Services",
     period: "08/23 - 10/23",
-    description: `• Collaborated with cross-functional teams to debug and resolve application issues, tracing 
-problems across frontend, backend, and infrastructure layers 
-• Strengthened problem-solving and debugging capabilities through collaborative agile tasks.`},
+    description: `• Debugged and resolved application issues across frontend, backend layers in a cross-functional 
+Agile environment. 
+• Improved issue resolution efficiency by tracing bugs through logs, APIs, and environment configs. 
+• Built strong software engineering fundamentals through hands-on debugging, code reviews, 
+and iterative development workflows.`},
 ];
 
 const ExperienceSection = () => {

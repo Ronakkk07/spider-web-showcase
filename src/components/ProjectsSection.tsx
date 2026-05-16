@@ -4,41 +4,48 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "SmartTrack Trip Planner",
-    description: `• Built RESTful backend services in Django integrating 4+ external APIs and AWS services 
-(Lambda, S3, DynamoDB)  
-• Implemented structured error handling and logging, reducing unresolved runtime errors by 
-40% 
-• Resolved user-reported issues by analysing backend behaviour and AWS service 
-integration` ,
-    tech: ["AWS Lambda", "S3", "DynamoDB","Django", "REST APIs", "Cloudwatch"],
-    github: "#",
-    live: "#",
-  },
-  {
     title: "Luna_WebBrowser_Agent",
-    description: `• Engineered scalable backend services in Python (Django) for assistant, reminders, shopping, 
-and user management, exposing clean REST APIs for client consumption. 
-• Optimized backend reliability by experimenting with Celery/Redis for reminder scheduling and 
-delivering a simplified, robust polling-based notification pipeline. 
-• Implemented audio processing and LLM workflows (Whisper/Gemini) as modular services, 
-logging pipeline events and failures to support monitoring and debugging. `,
+    description: `• Built Django-based backend services for assistant workflows (reminders, user management, 
+automation) exposed via REST APIs.  
+• Implemented Celery and Redis-based asynchronous processing to improve responsiveness 
+and enable reliable background task execution.  
+• Built modular AI pipelines (Whisper + LLMs) with structured logging across 5+ workflow 
+stages to support monitoring, debugging, and workflow traceability. `,
     tech: ["DjangoRestFramework", "Celery", "Redis", "Whisper STT", "LLMs", "AWS"],
     github: "https://github.com/Ronakkk07/Luna_your_webbrowser_ai",
     live: "#",
   },
   {
-    title: "Project Gamma",
-    description: "Mobile-first e-commerce platform with payment integration and inventory management.",
-    tech: ["Next.js", "Stripe", "MongoDB", "Docker"],
+    title: "SmartTrack Trip Planner",
+    description: `• Built scalable RESTful backend services integrating 4+ external APIs and AWS services.    
+• Implemented error handling and logging, reducing unresolved runtime errors by 40%  
+• Resolved user-reported issues by analysing backend behaviour and AWS service 
+integration ` ,
+    tech: ["AWS Lambda", "S3", "DynamoDB","Django", "REST APIs", "Cloudwatch"],
     github: "#",
     live: "#",
   },
   {
-    title: "Project Delta",
-    description: "Open source CLI tool for automating development workflows and code generation.",
-    tech: ["TypeScript", "Node.js", "CLI", "NPM"],
-    github: "#",
+    title: "RunFog Dublin (Fog & Distributed System) ",
+    description: `• Designed a distributed fog computing simulation with sensor data ingestion, batching and 
+processing across virtual fog nodes.     
+• Built an event-driven data pipeline using AWS SQS, Lambda, and EventBridge for 
+asynchronous telemetry processing and backend persistence.  
+• Developed a Django based analytics dashboard with real time polling, detect anomalies. `,
+    tech: [ "Django", "AWS SQS", "AWS Lambda", "EventBridge" ],
+    github: "https://github.com/Ronakkk07/RunFog-Dublin",
+    live: "#",
+  },
+  {
+    title: "DevOps-Focused E-learning Management System",
+    description: `• Developed an automated CI/CD pipelines using GitHub Actions to streamline testing, code 
+quality checks, and deployement workflows.    
+• Integrated pytest, Django tests, and SonarQube to detect failures early in the pipeline, 
+resolving 50% vulnerability issues.   
+• Debugged and resolved build, test, and deployment failures, ensuring reliable application 
+releases  ` ,
+    tech: [ "GitHub Actions", "CI/CD", "SonarQube", "pytest" ],
+    github: "https://github.com/RonakNCI/cloudlearn",
     live: "#",
   },
 ];
@@ -83,9 +90,9 @@ const ProjectsSection = () => {
                 <a href={project.github} className="text-muted-foreground hover:text-primary transition-colors">
                   <Github size={18} />
                 </a>
-                <a href={project.live} className="text-muted-foreground hover:text-primary transition-colors">
+                {/* <a href={project.live} className="text-muted-foreground hover:text-primary transition-colors">
                   <ExternalLink size={18} />
-                </a>
+                </a> */}
               </div>
             </motion.div>
           ))}

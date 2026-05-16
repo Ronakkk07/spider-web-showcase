@@ -9,15 +9,15 @@ const education = [
     location: "Dublin, Ireland",
     period: "2025 - 2026",
     description: "Focused on AWS Cloud Services, DevOps principles, Distributed Systems, and Software Engineering principles. GPA: 2:1 (Expected)",
-    highlights: ["Research Assistant", "Dean's List", "Published 2 papers"],
+    highlights: ["Research Project: Intelligent Multi-Cloud LLM Serving: A Cost aware Kubernetes Framework (Ongoing)"],
   },
   {
     degree: "B.Tech in Information Technology and Minors in Data Science",
     school: "Dwarkadas Jivanlal Sanghvi College of Engineering",
     location: "Mumbai, India",
     period: "2021 - 2025",
-    description: "Strong foundation in Data Structures, Algorithms, Operating Systems, Databases, and Computer Networks. GPA: 8/10 (First Class Honors)",
-    highlights: ["Class Topper", "Hackathon Winner", "Technical Club Lead"],
+    description: "Strong foundation in Data Structures, Algorithms, Operating Systems, Databases, and Computer Networks. GPA: 7.9/10 (First Class Honors)",
+    highlights: ["Research Project: Multilingual Minutes of Meeting Generator for Offline Meetings (Published)" ],
   },
 ];
 

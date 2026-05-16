@@ -4,23 +4,23 @@ import { useRef } from "react";
 const skillCategories = [
   {
     title: "Software Development",
-    skills: [ "Python", "Object-Oriented Programming (OOPS)", "Data Structures and Algorithms", "RESTful APIs", "DjangoRestFramework", "React", "pytest" ],
+    skills: [ "Python", "Object-Oriented Programming (OOPS)", "Data Structures and Algorithms", "REST APIs", "DjangoRestFramework", "React", "pytest" ],
   },
   {
     title: "Core Concepts",
-    skills: ["Linux Systems", "Operating Systems", "Networking (TCP/IP, DNS, Subnets)", "OSI Model", "CIDR Notation", "HTTP", "HTTPS"],
+    skills: ["Linux Systems", "Operating Systems", "Networking (TCP/IP, DNS, Subnets)", "OSI Model", "CIDR Notation", "Distributed Systems", "Microservices"],
   },
   {
     title: "Cloud Platforms/DevOps",
-    skills: ["Docker", "AWS", "Github", "CI/CD", "Azure", "Kubernetes", "Infrastructure as a Code", "automated testing", "unit testing"],
+    skills: ["Docker", "Github", "CI/CD", "Kubernetes (Ongoing)", "Monitoring & Logging", "AWS (Lambda, SQS, Kinesis, S3, DynamoDB, SageMaker, CloudWatch, ElastiBeanStalk, ElastiCache)", "Azure", "automated testing", "Infrastructure as a Code (Terraform)", "unit testing", "System Reliability", "Troubleshooting"],
   },
   {
-    title: "Databases",
+    title: "Databases & Caching",
     skills: ["PostgreSQL", "MySQL", "DynamoDB", "Relational Database Design", "Redis", "Celery"],
   },
   {
-    title: "Other",
-    skills: ["Quick Learner", "Troubleshooting", "Agile", "Testing", "System Design"],
+    title: "Development Practices",
+    skills: ["Agile Development", "Debugging", "Cross functional collaboration", "Problem Solving", "Software Design Principles", "Quick Learner"],
   },
 ];
 
