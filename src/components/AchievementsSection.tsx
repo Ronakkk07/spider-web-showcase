@@ -5,8 +5,8 @@ import { Trophy, Target, Rocket, Star } from "lucide-react";
 const achievements = [
   {
     icon: Trophy,
-    title: "Published Research Paper",
-    description: "Published my first ever research paper on IEEE Xplore of Multilingual Minutes of Meeting Generator for Offline Meetings.",
+    title: "IEEE Publication",
+    description: "Published research on multilingual AI system at ICFT 2025 (IEEE Xplore), focusing on automated speech processing and structured information extraction for real-world communication workflows",
   },
   {
     icon: Target,
@@ -18,11 +18,11 @@ const achievements = [
     title: "Hackathons",
     description: "Top 10 in UI/UX hackathons, Web development hackathons, and AI/ML hackathons.",
   },
-  // {
-  //   icon: Star,
-  //   title: "Speaker at Tech Conf",
-  //   description: "Spoke at major tech conferences about web performance and scalability.",
-  // },
+  {
+    icon: Star,
+    title: "Leadership",
+    description: " Led 50+ team members across content, outreach, and know-how initiatives, improving digital engagement by 40% - demonstrating project management and ownership.",
+  },
 ];
 
 const upcoming = [
