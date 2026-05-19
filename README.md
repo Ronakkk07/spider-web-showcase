@@ -18,18 +18,6 @@ The experience includes cloud internship work with AWS Lambda and CloudWatch, cl
 - Contact form that opens a pre-filled email draft
 - Responsive design for desktop and mobile screens
 
-## Portfolio Sections
-
-- **Hero:** Introduces Ronak Rajput as a Software Engineer, Cloud Engineer, and Problem Solver.
-- **About:** Embedded introduction video for a more personal overview.
-- **Experience:** AWS Cloud Intern, Centre of Excellence Intern, and Software Developer Intern experience.
-- **Skills:** Python, REST APIs, Django REST Framework, React, Linux, networking, AWS, Azure, Docker, CI/CD, monitoring, logging, databases, Redis, Celery, debugging, and collaboration.
-- **Projects:** Luna WebBrowser Agent, SmartTrack Trip Planner, RunFog Dublin, and a DevOps-focused E-learning Management System.
-- **Education:** MSc Cloud Computing at National College of Ireland and B.Tech Information Technology with a Data Science minor.
-- **Certificates & Publications:** AWS Partner credentials, Microsoft Azure Fundamentals, Codebasics certificates, and an IEEE Xplore publication.
-- **Achievements:** IEEE publication, 150+ LeetCode problems solved, and top 10 hackathon placements.
-- **Contact:** Email, LinkedIn, GitHub, LeetCode, and a direct contact form.
-
 ## Tech Stack
 
 - React
@@ -62,7 +50,7 @@ npm run dev
 Open the local URL printed in your terminal, usually:
 
 ```text
-http://localhost:5173
+http://localhost:8080
 ```
 
 ### Build for Production
@@ -99,13 +87,6 @@ src/
     Index.tsx
   assets/
 ```
-
-## Contact
-
-- Email: ronakrajput.ire@gmail.com
-- LinkedIn: https://www.linkedin.com/in/ronak-rajput-a748681b3/
-- GitHub: https://github.com/Ronakkk07
-- LeetCode: https://leetcode.com/u/ronakrajput1106/
 
 ## Purpose
 
