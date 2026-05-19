@@ -5,8 +5,8 @@ import { Trophy, Target, Rocket, Star } from "lucide-react";
 const achievements = [
   {
     icon: Trophy,
-    title: "Hackathon Winner",
-    description: "Won first place at XYZ Hackathon 2024 building an AI-powered solution.",
+    title: "Published Research Paper",
+    description: "Published my first ever research paper on IEEE Xplore of Multilingual Minutes of Meeting Generator for Offline Meetings.",
   },
   {
     icon: Target,
@@ -15,20 +15,21 @@ const achievements = [
   },
   {
     icon: Rocket,
-    title: "Launched 3 Products",
-    description: "Successfully launched 3 production applications serving thousands of users.",
+    title: "Hackathons",
+    description: "Top 10 in UI/UX hackathons, Web development hackathons, and AI/ML hackathons.",
   },
-  {
-    icon: Star,
-    title: "Speaker at Tech Conf",
-    description: "Spoke at major tech conferences about web performance and scalability.",
-  },
+  // {
+  //   icon: Star,
+  //   title: "Speaker at Tech Conf",
+  //   description: "Spoke at major tech conferences about web performance and scalability.",
+  // },
 ];
 
 const upcoming = [
-  "🎯 Preparing for AWS DevOps Professional Certification",
-  "🚀 Building an AI-powered open source tool",
-  "📚 Writing a technical blog series on system design",
+  " Solving DSA Problems actively on LeetCode",
+  " Brushing up Linux Skills, Networking",
+  " Building complex Luna_webBrowser Agent project and working on a new project",
+  " Implementing on a new research paper and aiming to publish it in a reputed journal",
 ];
 
 const AchievementsSection = () => {

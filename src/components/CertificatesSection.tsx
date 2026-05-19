@@ -3,11 +3,16 @@ import { useRef, useState } from "react";
 import { Award, ExternalLink, X } from "lucide-react";
 
 const certificates = [
-  { title: "AWS Solutions Architect", issuer: "Amazon Web Services", date: "2024", link: "#" },
-  { title: "Google Cloud Professional", issuer: "Google", date: "2023", link: "#" },
-  { title: "Meta Frontend Developer", issuer: "Meta / Coursera", date: "2023", link: "#" },
-  { title: "TensorFlow Developer", issuer: "Google", date: "2022", link: "#" },
-  { title: "Cybersecurity Specialization", issuer: "IBM", date: "2022", link: "#" },
+  { title: "AWS Partner: Technical Accredited", issuer: "Amazon Web Services Training and Certification", date: "2025", link: "https://www.credly.com/badges/6036ade8-0a80-43d6-ade4-5924e16ba61f/public_url" },
+  { title: "AWS Partner: Containers on AWS (Technical)", issuer: "Amazon Web Services Training and Certification", date: "2025", link: "https://drive.google.com/file/d/1fMzwhIL7eiRWcagJE-swQCuh48DdZdF1/view?usp=sharing" },
+  { title: "Microsoft Certified: Azure Fundamentals", issuer: "Microsoft", date: "2024", link: "https://learn.microsoft.com/en-us/users/ronakrajput-1724/credentials/7695465692502e48?ref=https%3A%2F%2Fwww.linkedin.com%2F" },
+  { title: "AWS Partner: Cloud Economics Essentials", issuer: "Amazon Web Services Training and Certification", date: "2025", link: "https://www.credly.com/badges/dc54bcdf-49a4-4053-8ad1-408a3ba71c7c/public_url" },
+  { title: "AWS Partner: Migrating Workloads to AWS (Technical)", issuer: "Amazon Web Services Training and Certification", date: "2025", link: "https://drive.google.com/file/d/10yXj9N7ekGdWA4T-yNEmN5sA4DiICggS/view?usp=sharing" },
+  { title: "AWS Partner: Generative AI Essentials ", issuer: "Amazon Web Services Training and Certification", date: "2025", link: "https://www.credly.com/badges/9eb9354d-7ca8-47c0-bf2d-ab81e728d7e2/public_url" },
+  { title: "AWS Partner: IoT on AWS (Business)", issuer: "Amazon Web Services Training and Certification", date: "2025", link: "https://drive.google.com/file/d/1nKUM87IHgAmZte4o4Mxh2_se65fJfFVi/view?usp=sharing" },
+  { title: "AWS Partner:Security Governance at Scale", issuer: "Amazon Web Services Training and Certification", date: "2025", link: "https://drive.google.com/file/d/1Cq5MT2x3vUZXqr2BvxYOTzRX98kVJRIq/view?usp=sharing" },
+  { title: "Get Job Ready: Power BI Data Analytics for All Levels 2.0", issuer: "Codebasics", date: "2024", link: "https://codebasics.io/certificate/CB-49-232002" },
+  { title: "Excel: Mother of Business Intelligence", issuer: "Codebasics", date: "2024", link: "https://codebasics.io/certificate/CB-51-232002" },
 ];
 
 const publications = [

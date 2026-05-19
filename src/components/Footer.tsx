@@ -20,7 +20,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/in/ronak-rajput-a748681b3/" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin size={18} />
             </a>
-            <a href="mailto:ronakrajput.ire@email.com" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="mailto:ronakrajput.ire@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
               <Mail size={18} />
             </a>
           </div>

@@ -11,7 +11,7 @@ const ContactSection = () => {
     e.preventDefault();
     const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
     const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
-    window.open(`mailto:your@email.com?subject=${subject}&body=${body}`);
+    window.open(`mailto:ronakrajput.ire@gmail.com?subject=${subject}&body=${body}`);
   };
 
   return (
@@ -33,14 +33,13 @@ const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Have a project in mind or just want to say hi? Feel free to reach out.
-              I'm always open to discussing new opportunities and ideas.
+              I'm actively looking for Graduate role in the field of Software Engineering and Cloud Support Assosciate roles and internships. If you have any opportunities or would like to connect, please feel free to reach out to me through the contact form or via email. I'm eager to collaborate and contribute to exciting projects in the tech industry.
             </p>
 
             <div className="space-y-4 mb-8">
-              <a href="mailto:ronakrajput.ire@email.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:ronakrajput.ire@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Mail size={20} />
-                <span>ronakrajput.ire@email.com</span>
+                <span>ronakrajput.ire@gmail.com</span>
               </a>
             </div>
 
@@ -51,6 +50,15 @@ const ContactSection = () => {
               <a href="https://www.linkedin.com/in/ronak-rajput-a748681b3/" className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
                 <Linkedin size={18} />
               </a>
+              <a
+            href="https://leetcode.com/u/ronakrajput1106/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-30 px-4 h-11 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
+            aria-label="LeetCode"
+          >
+            LeetCode
+          </a>
             </div>
           </motion.div>
 
