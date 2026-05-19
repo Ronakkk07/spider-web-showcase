@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mic, MicOff, Radio, Sparkles } from "lucide-react";
+import { MessageCircle, Mic, MicOff, Radio, Sparkles, X } from "lucide-react";
 
 type SpeechRecognitionAlternative = {
   transcript: string;
@@ -41,55 +41,55 @@ const sections = [
     id: "home",
     label: "Hero",
     script:
-      "Meet Ronak at the center of this Spider Verse portfolio. This opening section sets the tone immediately: full stack capability, confident presentation, and a builder mindset that is ready for impact from day one.",
+      "This is Ronak Rajput's portfolio. The headline is simple: software engineer, cloud engineer, and problem solver. Ronak is positioning himself for graduate software engineering and cloud support associate roles, with a profile built around practical backend work, cloud services, and clear troubleshooting ability.",
   },
   {
     id: "about",
     label: "About",
     script:
-      "In the about section, Ronak comes through as a developer who pairs curiosity with responsibility. That combination matters because strong teams need someone who learns fast, writes thoughtfully, and keeps quality high while solving real problems.",
+      "The about section adds the human side through Ronak's introduction video. It gives recruiters a quick sense of communication, motivation, and how he explains his journey beyond a list of technologies.",
   },
   {
     id: "experience",
     label: "Experience",
     script:
-      "Here the experience timeline highlights growth, ownership, and consistent delivery. Ronak is positioned as someone who can contribute across the stack, move features forward, and support teams with practical engineering judgment.",
+      "Experience is one of the strongest parts of the page. Ronak has worked as an AWS Cloud Intern at F13 Technologies, building Python and Lambda based serverless backend services and improving observability with CloudWatch. Before that, he supported cloud and VDI migration work at Anunta, troubleshooting networking, DNS, TCP/IP, operating system issues, and client requirements. He also has software developer internship experience debugging across frontend and backend layers in Agile teams.",
   },
   {
     id: "skills",
     label: "Skills",
     script:
-      "The skills section shows breadth without losing focus. Frontend, backend, tooling, and systems knowledge together make Ronak a well rounded candidate who can ramp up quickly and add value across product and engineering needs.",
+      "The skills section is aimed directly at graduate software and cloud support roles. Ronak brings Python, data structures, REST APIs, Django REST Framework, React, Linux, networking, distributed systems, AWS services, Azure, Docker, CI/CD, Terraform fundamentals, monitoring, logging, databases, Redis, Celery, debugging, and cross functional collaboration.",
   },
   {
     id: "projects",
     label: "Projects",
     script:
-      "Projects are where execution becomes visible. This section showcases Ronak as a hands on problem solver who can turn ideas into polished, usable products with modern technologies and clear technical direction.",
+      "Projects show how Ronak turns skills into working systems. Luna WebBrowser Agent includes Django backend services, Celery, Redis, Whisper, LLM pipelines, and structured logging. SmartTrack Trip Planner uses REST APIs, AWS services, logging, and error handling. RunFog Dublin demonstrates distributed fog computing with SQS, Lambda, EventBridge, and a Django dashboard. The e-learning management project shows DevOps practice with GitHub Actions, testing, and SonarQube.",
   },
   {
     id: "education",
     label: "Education",
     script:
-      "The education section reinforces technical foundation and long term discipline. It supports the bigger story that Ronak combines formal learning with practical building, which makes him a dependable candidate for ambitious teams.",
+      "Education gives the technical foundation behind the work. Ronak is pursuing an MSc in Cloud Computing at National College of Ireland, focused on AWS, DevOps, distributed systems, and software engineering. His BTech in Information Technology with a Data Science minor built the core base in data structures, algorithms, operating systems, databases, and computer networks.",
   },
   {
     id: "certificates",
     label: "Certificates",
     script:
-      "These certifications and publications add external proof of effort and growth. They help frame Ronak as someone who keeps leveling up and invests seriously in staying current with modern engineering practices.",
+      "Certificates back up the cloud story. Ronak has Microsoft Azure Fundamentals and multiple AWS Partner credentials across technical accreditation, containers, cloud economics, workload migration, generative AI, IoT, and security governance. The publication adds research credibility through an IEEE Xplore paper on a multilingual minutes of meeting generator using speech to text, speaker diarization, and AI summarization.",
   },
   {
     id: "achievements",
     label: "Achievements",
     script:
-      "Achievements provide the strongest signal of momentum. They position Ronak as a candidate who not only learns and builds, but also delivers outcomes that stand out and create confidence for hiring teams.",
+      "Achievements show momentum. Ronak has published research on IEEE Xplore, solved more than 150 LeetCode problems, and placed in the top 10 across UI UX, web development, and AI ML hackathons. The what's next section shows he is still actively sharpening DSA, Linux, networking, Luna, and new research work.",
   },
   {
     id: "contact",
     label: "Contact",
     script:
-      "The walkthrough ends at contact because this portfolio is built to convert interest into conversation. Ronak is presented here as a high potential candidate worth reaching out to for impactful engineering roles and collaboration.",
+      "The contact section is the call to action. Ronak is actively looking for graduate software engineering roles, cloud support associate roles, and internships. The page gives recruiters direct email, LinkedIn, GitHub, LeetCode, and a contact form so the next step is easy.",
   },
 ];
 
@@ -103,6 +103,7 @@ const VoiceWalkthrough = () => {
   const [isSupported, setIsSupported] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [status, setStatus] = useState("Say \"Ronak walkthrough my portfolio\" after arming the mic.");
   const [heardText, setHeardText] = useState("");
   const [webShots, setWebShots] = useState<number[]>([]);
@@ -256,51 +257,86 @@ const VoiceWalkthrough = () => {
   return (
     <>
       <div className="fixed bottom-6 left-4 z-50 sm:bottom-8 sm:left-6">
-        <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-background/90 px-4 py-4 shadow-[0_0_30px_rgba(239,68,68,0.2)] backdrop-blur-md">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-primary" />
-          <div className="mb-3 flex items-center gap-3">
-            <div className="web-shooter-body">
-              <div className="web-shooter-core" />
-            </div>
-            <div>
-              <p className="font-tech text-[10px] uppercase tracking-[0.3em] text-primary">Voice Guide</p>
-              <p className="text-sm font-semibold text-foreground">Wake word: Ronak</p>
-            </div>
-          </div>
-
-          <p className="max-w-xs text-xs leading-relaxed text-muted-foreground">{status}</p>
-
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            <button
-              type="button"
-              onClick={toggleListening}
-              disabled={!isSupported || isRunning}
-              className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-2 text-xs font-medium text-foreground transition-colors hover:bg-primary/20 disabled:cursor-not-allowed disabled:opacity-50"
+        <AnimatePresence mode="wait">
+          {isOpen ? (
+            <motion.div
+              key="voice-guide-panel"
+              initial={{ opacity: 0, y: 16, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 16, scale: 0.96 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-primary/30 bg-background/90 px-4 py-4 shadow-[0_0_30px_rgba(239,68,68,0.2)] backdrop-blur-md"
             >
-              {isListening ? <MicOff size={14} /> : <Mic size={14} />}
-              {isListening ? "Disarm Mic" : "Arm Mic"}
-            </button>
-            <button
-              type="button"
-              onClick={() => void startWalkthrough()}
-              disabled={isRunning}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary/30 hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <Sparkles size={14} />
-              Start Walkthrough
-            </button>
-            <span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
-              <Radio size={12} className={isListening ? "text-primary" : ""} />
-              {isListening ? "Listening" : "Idle"}
-            </span>
-          </div>
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-primary" />
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                aria-label="Minimize voice guide"
+              >
+                <X size={15} />
+              </button>
 
-          {heardText ? (
-            <p className="mt-3 max-w-xs text-[11px] text-muted-foreground">
-              Heard: <span className="text-foreground">{heardText}</span>
-            </p>
-          ) : null}
-        </div>
+              <div className="mb-3 flex items-center gap-3 pr-10">
+                <div className="web-shooter-body">
+                  <div className="web-shooter-core" />
+                </div>
+                <div>
+                  <p className="font-tech text-[10px] uppercase tracking-[0.3em] text-primary">Voice Guide</p>
+                  <p className="text-sm font-semibold text-foreground">Wake word: Ronak</p>
+                </div>
+              </div>
+
+              <p className="max-w-xs text-xs leading-relaxed text-muted-foreground">{status}</p>
+
+              <div className="mt-3 flex flex-wrap items-center gap-2">
+                <button
+                  type="button"
+                  onClick={toggleListening}
+                  disabled={!isSupported || isRunning}
+                  className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-2 text-xs font-medium text-foreground transition-colors hover:bg-primary/20 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {isListening ? <MicOff size={14} /> : <Mic size={14} />}
+                  {isListening ? "Disarm Mic" : "Arm Mic"}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void startWalkthrough()}
+                  disabled={isRunning}
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary/30 hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  <Sparkles size={14} />
+                  Start Walkthrough
+                </button>
+                <span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
+                  <Radio size={12} className={isListening ? "text-primary" : ""} />
+                  {isListening ? "Listening" : "Idle"}
+                </span>
+              </div>
+
+              {heardText ? (
+                <p className="mt-3 max-w-xs text-[11px] text-muted-foreground">
+                  Heard: <span className="text-foreground">{heardText}</span>
+                </p>
+              ) : null}
+            </motion.div>
+          ) : (
+            <motion.button
+              key="voice-guide-launcher"
+              type="button"
+              onClick={() => setIsOpen(true)}
+              initial={{ opacity: 0, y: 10, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.9 }}
+              transition={{ duration: 0.2 }}
+              className="relative flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-background/90 text-primary shadow-[0_0_24px_rgba(239,68,68,0.28)] backdrop-blur-md transition-colors hover:bg-primary/10"
+              aria-label="Open voice guide"
+            >
+              <MessageCircle size={22} />
+              {isListening ? <span className="absolute right-1 top-1 h-3 w-3 rounded-full bg-primary shadow-[0_0_12px_rgba(239,68,68,0.9)]" /> : null}
+            </motion.button>
+          )}
+        </AnimatePresence>
       </div>
 
       <div className="pointer-events-none fixed inset-y-0 left-0 z-40 hidden w-full overflow-hidden sm:block">

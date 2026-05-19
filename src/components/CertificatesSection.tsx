@@ -63,13 +63,13 @@ const CertificatesSection = () => {
           <h3 className="font-display text-3xl text-foreground mb-6">Certificates</h3>
           <div className="overflow-hidden">
             <motion.div
-              className="flex gap-6"
+              className="flex w-max gap-6"
               animate={{ x: ["0%", "-50%"] }}
               transition={{
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 20,
+                  duration: 36,
                   ease: "linear",
                 },
               }}
