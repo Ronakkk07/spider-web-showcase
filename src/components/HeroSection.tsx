@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Download } from "lucide-react";
+import { Briefcase, Download, Github, Linkedin, MapPin } from "lucide-react";
 import heroImage from "@/assets/hero-spider.jpg";
-import LeetCodeIcon from "@/components/LeetCodeIcon";
 
 const HeroSection = () => {
   return (
@@ -41,9 +40,20 @@ const HeroSection = () => {
           <h1 className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground leading-none mb-4">
             Ronak <span className="text-gradient-spider">Rajput</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
-            Software Engineer · Cloud Engineer · Problem Solver
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
+            Software Engineer | Cloud Engineer | Problem Solver
           </p>
+          <div className="mx-auto mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-x-3 gap-y-2 rounded-lg border border-primary/35 bg-card/80 px-4 py-2 text-xs font-semibold text-foreground shadow-[0_0_22px_rgba(239,68,68,0.16)] backdrop-blur-sm sm:text-sm">
+            <span className="inline-flex items-center gap-2">
+              <Briefcase size={15} className="text-primary" />
+              Open to graduate software engineering/cloud support associate roles
+            </span>
+            <span className="hidden h-4 w-px bg-border sm:block" />
+            <span className="inline-flex items-center gap-2 text-muted-foreground">
+              <MapPin size={15} className="text-primary" />
+              Ireland
+            </span>
+          </div>
         </motion.div>
 
         {/* Social Links */}
