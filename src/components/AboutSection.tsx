@@ -35,15 +35,15 @@ const AboutSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="w-full rounded-2xl overflow-hidden bg-card border border-border shadow-2xl relative group hover:border-primary/30 transition-all duration-5xl glow-red"
         >
-          <div className="w-full aspect-video">
-            <iframe
+          <div className="w-full aspect-video h-full flex items-center justify-center text-muted-foreground">
+            {/* <iframe
               className="w-full h-full"
               src={`https://www.youtube.com/embed/${"MgSlY9aVMPE"}?rel=0&modestbranding=1&showinfo=0`}
               title="Ronak Rajput - About Me Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               loading="lazy"
-            />
+            /> */} Video Coming Soon!
           </div>
         </motion.div>
 

@@ -1,71 +1,37 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, Mic, MicOff, Radio, Sparkles, X } from "lucide-react";
-
-type SpeechRecognitionAlternative = {
-  transcript: string;
-};
-
-type SpeechRecognitionResultLike = {
-  isFinal: boolean;
-  0: SpeechRecognitionAlternative;
-};
-
-type SpeechRecognitionEventLike = Event & {
-  resultIndex: number;
-  results: ArrayLike<SpeechRecognitionResultLike>;
-};
-
-type SpeechRecognitionLike = EventTarget & {
-  continuous: boolean;
-  interimResults: boolean;
-  lang: string;
-  onend: (() => void) | null;
-  onerror: ((event: Event) => void) | null;
-  onresult: ((event: SpeechRecognitionEventLike) => void) | null;
-  start: () => void;
-  stop: () => void;
-};
-
-type SpeechRecognitionCtor = new () => SpeechRecognitionLike;
-
-declare global {
-  interface Window {
-    SpeechRecognition?: SpeechRecognitionCtor;
-    webkitSpeechRecognition?: SpeechRecognitionCtor;
-  }
-}
+import { MessageCircle, Sparkles, Square, X } from "lucide-react";
 
 const sections = [
   {
     id: "home",
     label: "Hero",
     script:
-      "This is Ronak Rajput's portfolio. The headline is simple: software engineer, cloud engineer, and problem solver. Ronak is positioning himself for graduate software engineering and cloud support associate roles, with a profile built around practical backend work, cloud services, and clear troubleshooting ability.",
+      "Ronak Rajput. Three words that represent a software engineer who doesn't wait to be handed problems — he finds them, breaks them down, and builds something that lasts. The headline you see isn't a wish list. It's a track record. Software engineer, cloud engineer, and problem solver — backed by internships, publications, and systems that run in production. If you're looking for a graduate who can own backend work, navigate AWS, and ship reliable software from day one, you're in exactly the right place.",
   },
   {
     id: "about",
     label: "About",
     script:
-      "The about section adds the human side through Ronak's introduction video. It gives recruiters a quick sense of communication, motivation, and how he explains his journey beyond a list of technologies.",
+      "Before the code, there's context. Ronak grew up in Mumbai, built his technical foundation at D.J. Sanghvi, and made the deliberate move to Dublin to sharpen his edge at the postgraduate level. The video on this page gives you something a resume can't — the way he thinks, communicates, and explains himself when the stakes are real. Watch it. The person you'll see is the same one who will show up on day one of your team.",
   },
   {
     id: "experience",
     label: "Experience",
     script:
-      "Experience is one of the strongest parts of the page. Ronak has worked as an AWS Cloud Intern at F13 Technologies, building Python and Lambda based serverless backend services and improving observability with CloudWatch. Before that, he supported cloud and VDI migration work at Anunta, troubleshooting networking, DNS, TCP/IP, operating system issues, and client requirements. He also has software developer internship experience debugging across frontend and backend layers in Agile teams.",
+      "Three internships, each one harder than the last. At F13 Technologies, Ronak stepped into AWS cloud work not because it was assigned — but because he wanted to understand what production-grade serverless infrastructure actually feels like from the inside. At Anunta, twice, he sat in on client calls, debugged things that weren't his responsibility, and earned his Azure certification on the side because he refused to be the person in the room who didn't know the answer. The pattern across all three isn't the tech stack. It's the same thing every time — show up, find the gap, close it.",
   },
   {
     id: "skills",
     label: "Skills",
     script:
-      "The skills section is aimed directly at graduate software and cloud support roles. Ronak brings Python, data structures, REST APIs, Django REST Framework, React, Linux, networking, distributed systems, AWS services, Azure, Docker, CI/CD, Terraform fundamentals, monitoring, logging, databases, Redis, Celery, debugging, and cross functional collaboration.",
+      "The honest version of a skills section isn't a list of every technology someone has touched. It's an answer to one question — when something breaks in your stack, is this person going to figure it out or wait to be told? Ronak spent three internships debugging things across cloud infrastructure, networking layers, backend services, and deployment pipelines. The technologies he knows — Python, AWS, Django, Docker, Linux, CI/CD, databases, Redis — aren't on this page because he passed a course. They're here because he's broken them, fixed them, and understood why. The value isn't the list. It's the judgment that comes from actually using these things under pressure",
   },
   {
     id: "projects",
     label: "Projects",
     script:
-      "Projects show how Ronak turns skills into working systems. Luna WebBrowser Agent includes Django backend services, Celery, Redis, Whisper, LLM pipelines, and structured logging. SmartTrack Trip Planner uses REST APIs, AWS services, logging, and error handling. RunFog Dublin demonstrates distributed fog computing with SQS, Lambda, EventBridge, and a Django dashboard. The e-learning management project shows DevOps practice with GitHub Actions, testing, and SonarQube.",
+      "Every project on this page started with the same question: what would this look like if it actually had to work in production? Luna isn't a tutorial clone. RunFog Dublin isn't a toy. SmartTrack was built with real error handling because real errors happen. Ronak doesn't build to impress interviewers. He builds to understand systems deeply enough that when something breaks at two in the morning, he already knows where to look. That instinct — that refusal to leave things half-finished — is what these projects are actually demonstrating.",
   },
   {
     id: "education",
@@ -77,35 +43,31 @@ const sections = [
     id: "certificates",
     label: "Certificates",
     script:
-      "Certificates back up the cloud story. Ronak has Microsoft Azure Fundamentals and multiple AWS Partner credentials across technical accreditation, containers, cloud economics, workload migration, generative AI, IoT, and security governance. The publication adds research credibility through an IEEE Xplore paper on a multilingual minutes of meeting generator using speech to text, speaker diarization, and AI summarization.",
+      "Every certificate here was earned in response to a gap Ronak noticed in himself. Azure before he fully understood cloud breadth. Multiple AWS credentials because one wasn't enough to feel confident. The IEEE publication because a final year project felt like it deserved to be scrutinized by a real technical audience. The pattern isn't certification hunting. It's someone who is genuinely uncomfortable not knowing things — and does something about it.",
   },
   {
     id: "achievements",
     label: "Achievements",
     script:
-      "Achievements show momentum. Ronak has published research on IEEE Xplore, solved more than 150 LeetCode problems, and placed in the top 10 across UI UX, web development, and AI ML hackathons. The what's next section shows he is still actively sharpening DSA, Linux, networking, Luna, and new research work.",
+      "The IEEE publication wasn't assigned. The hundred and fifty LeetCode problems weren't required. The hackathon placements weren't strategic networking. These are the things Ronak does when nobody is watching — because the standard he holds himself to doesn't change based on whether it's being evaluated. Consistency isn't something he performs. It's just how he operates.",
   },
   {
     id: "contact",
     label: "Contact",
     script:
-      "The contact section is the call to action. Ronak is actively looking for graduate software engineering roles, cloud support associate roles, and internships. The page gives recruiters direct email, LinkedIn, GitHub, LeetCode, and a contact form so the next step is easy.",
+      "This is where intent becomes action. Ronak is actively targeting graduate software engineering roles, cloud support associate positions, and internships — in Dublin and beyond. He's not waiting for the perfect opportunity. He's building toward it, every day, and looking for an environment where he can contribute from the first sprint. The form, the email, LinkedIn, GitHub, and LeetCode are all here. The next move is yours. If you've watched this walkthrough to the end, you already know what you're getting. Reach out.",
   },
 ];
 
-const WAKE_WORD = "Ronak";
-const COMMAND_KEYWORDS = ["walkthrough", "walk through", "tour", "portfolio", "sections"];
-
 const VoiceWalkthrough = () => {
-  const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const timeoutsRef = useRef<number[]>([]);
+  const runTokenRef = useRef(0);
+  const activeSpeechResolveRef = useRef<(() => void) | null>(null);
+  const activeDelayResolveRef = useRef<(() => void) | null>(null);
   const isRunningRef = useRef(false);
-  const [isSupported, setIsSupported] = useState(false);
-  const [isListening, setIsListening] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
-  const [status, setStatus] = useState("Say \"Ronak walkthrough my portfolio\" after arming the mic.");
-  const [heardText, setHeardText] = useState("");
+  const [status, setStatus] = useState("Start the portfolio walkthrough whenever you're ready.");
   const [webShots, setWebShots] = useState<number[]>([]);
   const speechSupported = typeof window !== "undefined" && "speechSynthesis" in window;
 
@@ -114,65 +76,12 @@ const VoiceWalkthrough = () => {
   }, [isRunning]);
 
   useEffect(() => {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    if (!SpeechRecognition) {
-      setStatus("Voice wake word is not supported in this browser. Manual walkthrough is still available.");
-      return;
-    }
-
-    const recognition = new SpeechRecognition();
-    recognition.continuous = true;
-    recognition.interimResults = false;
-    recognition.lang = "en-US";
-
-    recognition.onresult = (event) => {
-      const transcript = Array.from(event.results)
-        .slice(event.resultIndex)
-        .filter((result) => result.isFinal)
-        .map((result) => result[0].transcript)
-        .join(" ")
-        .trim();
-
-      if (!transcript) {
-        return;
-      }
-
-      const normalized = transcript.toLowerCase();
-      setHeardText(transcript);
-
-      if (!normalized.includes(WAKE_WORD)) {
-        setStatus("Listening for the wake word \"Ronak\".");
-        return;
-      }
-
-      if (!COMMAND_KEYWORDS.some((keyword) => normalized.includes(keyword))) {
-        setStatus("Wake word detected. This assistant only supports the portfolio walkthrough command.");
-        return;
-      }
-
-      if (isRunningRef.current) {
-        setStatus("Walkthrough is already in progress.");
-        return;
-      }
-
-      void startWalkthrough();
-    };
-
-    recognition.onerror = () => {
-      setIsListening(false);
-      setStatus("Microphone access was interrupted. Re-arm the mic to listen for Ronak again.");
-    };
-
-    recognition.onend = () => {
-      setIsListening(false);
-    };
-
-    recognitionRef.current = recognition;
-    setIsSupported(true);
-
     return () => {
-      recognition.stop();
+      runTokenRef.current += 1;
+      activeSpeechResolveRef.current?.();
+      activeSpeechResolveRef.current = null;
+      activeDelayResolveRef.current?.();
+      activeDelayResolveRef.current = null;
       if (speechSupported) {
         window.speechSynthesis.cancel();
       }
@@ -192,20 +101,58 @@ const VoiceWalkthrough = () => {
     timeoutsRef.current.push(timeout);
   };
 
-  const speak = (text: string) =>
+  const speak = (text: string, runToken: number) =>
     new Promise<void>((resolve) => {
       if (!speechSupported) {
         resolve();
         return;
       }
 
+      const finish = () => {
+        if (activeSpeechResolveRef.current === finish) {
+          activeSpeechResolveRef.current = null;
+        }
+        resolve();
+      };
+
+      activeSpeechResolveRef.current = finish;
       window.speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.rate = 1;
       utterance.pitch = 0.95;
-      utterance.onend = () => resolve();
-      utterance.onerror = () => resolve();
+      utterance.onend = finish;
+      utterance.onerror = finish;
       window.speechSynthesis.speak(utterance);
+
+      if (runTokenRef.current !== runToken) {
+        window.speechSynthesis.cancel();
+        finish();
+      }
+    });
+
+  const waitBetweenSections = (runToken: number) =>
+    new Promise<void>((resolve) => {
+      const timeout = window.setTimeout(() => {
+        if (activeDelayResolveRef.current === finish) {
+          activeDelayResolveRef.current = null;
+        }
+        resolve();
+      }, 500);
+
+      const finish = () => {
+        window.clearTimeout(timeout);
+        if (activeDelayResolveRef.current === finish) {
+          activeDelayResolveRef.current = null;
+        }
+        resolve();
+      };
+
+      activeDelayResolveRef.current = finish;
+      timeoutsRef.current.push(timeout);
+
+      if (runTokenRef.current !== runToken) {
+        finish();
+      }
     });
 
   const startWalkthrough = async () => {
@@ -213,45 +160,48 @@ const VoiceWalkthrough = () => {
       return;
     }
 
+    const runToken = runTokenRef.current + 1;
+    runTokenRef.current = runToken;
     setIsRunning(true);
     setStatus("Walkthrough started. Ronak is guiding the page section by section.");
-    recognitionRef.current?.stop();
 
     for (const section of sections) {
+      if (runTokenRef.current !== runToken) {
+        return;
+      }
+
       const element = document.getElementById(section.id);
       triggerWebShot();
       element?.scrollIntoView({ behavior: "smooth", block: "start" });
       setStatus(`Highlighting ${section.label}.`);
-      await speak(section.script);
-      await new Promise<void>((resolve) => {
-        const timeout = window.setTimeout(resolve, 500);
-        timeoutsRef.current.push(timeout);
-      });
+      await speak(section.script, runToken);
+      await waitBetweenSections(runToken);
+    }
+
+    if (runTokenRef.current !== runToken) {
+      return;
     }
 
     setIsRunning(false);
-    setStatus("Walkthrough complete. Re-arm the mic to listen for Ronak again.");
+    setStatus("Walkthrough complete. Start it again whenever you want another pass.");
   };
 
-  const toggleListening = () => {
-    if (!isSupported || isRunning) {
+  const stopWalkthrough = () => {
+    if (!isRunningRef.current) {
       return;
     }
 
-    if (isListening) {
-      recognitionRef.current?.stop();
-      setIsListening(false);
-      setStatus("Mic disarmed. Arm it again when you want to listen for Ronak.");
-      return;
+    runTokenRef.current += 1;
+    activeSpeechResolveRef.current?.();
+    activeSpeechResolveRef.current = null;
+    activeDelayResolveRef.current?.();
+    activeDelayResolveRef.current = null;
+    if (speechSupported) {
+      window.speechSynthesis.cancel();
     }
-
-    try {
-      recognitionRef.current?.start();
-      setIsListening(true);
-      setStatus("Mic armed. Listening for the wake word \"Ronak\".");
-    } catch {
-      setStatus("The microphone could not start just yet. Give it another try.");
-    }
+    setWebShots([]);
+    setIsRunning(false);
+    setStatus("Walkthrough stopped. Start it again whenever you're ready.");
   };
 
   return (
@@ -283,42 +233,33 @@ const VoiceWalkthrough = () => {
                 </div>
                 <div>
                   <p className="font-tech text-[10px] uppercase tracking-[0.3em] text-primary">Voice Guide</p>
-                  <p className="text-sm font-semibold text-foreground">Wake word: Ronak</p>
+                  <p className="text-sm font-semibold text-foreground">Portfolio Walkthrough</p>
                 </div>
               </div>
 
               <p className="max-w-xs text-xs leading-relaxed text-muted-foreground">{status}</p>
 
               <div className="mt-3 flex flex-wrap items-center gap-2">
-                <button
-                  type="button"
-                  onClick={toggleListening}
-                  disabled={!isSupported || isRunning}
-                  className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-2 text-xs font-medium text-foreground transition-colors hover:bg-primary/20 disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  {isListening ? <MicOff size={14} /> : <Mic size={14} />}
-                  {isListening ? "Disarm Mic" : "Arm Mic"}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => void startWalkthrough()}
-                  disabled={isRunning}
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary/30 hover:text-primary disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  <Sparkles size={14} />
-                  Start Walkthrough
-                </button>
-                <span className="inline-flex items-center gap-1 text-[11px] text-muted-foreground">
-                  <Radio size={12} className={isListening ? "text-primary" : ""} />
-                  {isListening ? "Listening" : "Idle"}
-                </span>
+                {isRunning ? (
+                  <button
+                    type="button"
+                    onClick={stopWalkthrough}
+                    className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-2 text-xs font-medium text-foreground transition-colors hover:bg-primary/20"
+                  >
+                    <Square size={13} />
+                    Stop Walkthrough
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => void startWalkthrough()}
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary/30 hover:text-primary"
+                  >
+                    <Sparkles size={14} />
+                    Start Walkthrough
+                  </button>
+                )}
               </div>
-
-              {heardText ? (
-                <p className="mt-3 max-w-xs text-[11px] text-muted-foreground">
-                  Heard: <span className="text-foreground">{heardText}</span>
-                </p>
-              ) : null}
             </motion.div>
           ) : (
             <motion.button
@@ -333,7 +274,7 @@ const VoiceWalkthrough = () => {
               aria-label="Open voice guide"
             >
               <MessageCircle size={22} />
-              {isListening ? <span className="absolute right-1 top-1 h-3 w-3 rounded-full bg-primary shadow-[0_0_12px_rgba(239,68,68,0.9)]" /> : null}
+              {isRunning ? <span className="absolute right-1 top-1 h-3 w-3 rounded-full bg-primary shadow-[0_0_12px_rgba(239,68,68,0.9)]" /> : null}
             </motion.button>
           )}
         </AnimatePresence>
