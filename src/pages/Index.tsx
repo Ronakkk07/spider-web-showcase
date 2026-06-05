@@ -2,10 +2,11 @@ import Navbar from "@/components/Navbar";
 import SpiderWebBackground from "@/components/SpiderWebBackground";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import EducationSection from "@/components/EducationSection";
+import CareerTimeline from "@/components/CareerTimeline";
 import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import EducationSection from "@/components/EducationSection";
 import CertificatesSection from "@/components/CertificatesSection";
 import AchievementsSection from "@/components/AchievementsSection";
 import ContactSection from "@/components/ContactSection";
@@ -20,10 +21,11 @@ const Index = () => {
       <main className="relative z-10">
         <HeroSection />
         <AboutSection />
+        <EducationSection />
+        <CareerTimeline />
         <ExperienceSection />
         <SkillsSection />
         <ProjectsSection />
-        <EducationSection />
         <CertificatesSection />
         <AchievementsSection />
         <ContactSection />

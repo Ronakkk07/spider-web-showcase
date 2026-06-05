@@ -7,55 +7,55 @@ const sections = [
     id: "home",
     label: "Hero",
     script:
-      "Ronak Rajput. Three words that represent a software engineer who doesn't wait to be handed problems — he finds them, breaks them down, and builds something that lasts. The headline you see isn't a wish list. It's a track record. Software engineer, cloud engineer, and problem solver — backed by internships, publications, and systems that run in production. If you're looking for a graduate who can own backend work, navigate AWS, and ship reliable software from day one, you're in exactly the right place.",
+      "Ronak Rajput. M.Sc Cloud Computing candidate at National College of Ireland — 2026 graduate. Three paid internships at companies running real cloud infrastructure. One IEEE-published research paper. Six-plus certifications across AWS and Azure. Over 180 LeetCode problems solved. This is a profile built on consistent, verifiable delivery — across backend systems, cloud engineering, and software development. Everything you need to make a hiring decision is on this page.",
   },
   {
     id: "about",
     label: "About",
     script:
-      "Before the code, there's context. Ronak grew up in Mumbai, built his technical foundation at D.J. Sanghvi, and made the deliberate move to Dublin to sharpen his edge at the postgraduate level. The video on this page gives you something a resume can't — the way he thinks, communicates, and explains himself when the stakes are real. Watch it. The person you'll see is the same one who will show up on day one of your team.",
-  },
-  {
-    id: "experience",
-    label: "Experience",
-    script:
-      "Three internships, each one harder than the last. At F13 Technologies, Ronak stepped into AWS cloud work not because it was assigned — but because he wanted to understand what production-grade serverless infrastructure actually feels like from the inside. At Anunta, twice, he sat in on client calls, debugged things that weren't his responsibility, and earned his Azure certification on the side because he refused to be the person in the room who didn't know the answer. The pattern across all three isn't the tech stack. It's the same thing every time — show up, find the gap, close it.",
-  },
-  {
-    id: "skills",
-    label: "Skills",
-    script:
-      "The honest version of a skills section isn't a list of every technology someone has touched. It's an answer to one question — when something breaks in your stack, is this person going to figure it out or wait to be told? Ronak spent three internships debugging things across cloud infrastructure, networking layers, backend services, and deployment pipelines. The technologies he knows — Python, AWS, Django, Docker, Linux, CI/CD, databases, Redis — aren't on this page because he passed a course. They're here because he's broken them, fixed them, and understood why. The value isn't the list. It's the judgment that comes from actually using these things under pressure",
-  },
-  {
-    id: "projects",
-    label: "Projects",
-    script:
-      "Every project on this page started with the same question: what would this look like if it actually had to work in production? Luna isn't a tutorial clone. RunFog Dublin isn't a toy. SmartTrack was built with real error handling because real errors happen. Ronak doesn't build to impress interviewers. He builds to understand systems deeply enough that when something breaks at two in the morning, he already knows where to look. That instinct — that refusal to leave things half-finished — is what these projects are actually demonstrating.",
+      "B.Tech in Information Technology from D.J. Sanghvi, Mumbai — then a deliberate move to Dublin for an M.Sc focused specifically on cloud computing, distributed systems, and DevOps. The relocation wasn't accidental. It was a calculated investment in the skills that matter most for modern software engineering. Ronak didn't arrive looking for a credential. He came to close the gap between what he knew and what production-grade cloud work actually demands.",
   },
   {
     id: "education",
     label: "Education",
     script:
-      "Education gives the technical foundation behind the work. Ronak is pursuing an MSc in Cloud Computing at National College of Ireland, focused on AWS, DevOps, distributed systems, and software engineering. His BTech in Information Technology with a Data Science minor built the core base in data structures, algorithms, operating systems, databases, and computer networks.",
+      "National College of Ireland — M.Sc Cloud Computing, 2025 to 2026. Core modules: AWS architecture, serverless systems, DevOps pipelines, and distributed computing. Prior: B.Tech Information Technology at DJSCE Mumbai with a Data Science minor and a strong academic record. The undergraduate thesis resulted in an IEEE publication at ICFT 2025 — a multilingual meeting summariser, peer-reviewed and accepted. Two degrees. One clear technical direction.",
+  },
+  {
+    id: "experience",
+    label: "Experience",
+    script:
+      "Three internships. All in production environments. At F13 Technologies — AWS Lambda, S3, SQS, and EventBridge for event-driven data pipelines. At Anunta Technology, twice — first building Django REST APIs with Celery for async processing, then in their Centre of Excellence working on Azure cloud migration and client-facing infrastructure. No toy environments. No sandbox projects. The kind of hands-on exposure that most graduates spend two years chasing.",
+  },
+  {
+    id: "skills",
+    label: "Skills",
+    script:
+      "Python and Django for backend. AWS — Lambda, S3, DynamoDB, SQS, EventBridge, and CloudWatch — for cloud infrastructure. Docker, Kubernetes, and Terraform for containerisation and infrastructure as code. PostgreSQL, MySQL, and Redis for data. GitHub Actions and CI/CD for delivery. Linux, networking, and distributed systems for depth. Every item on this list was earned through internship work or production debugging — not self-assessed from a tutorial.",
+  },
+  {
+    id: "projects",
+    label: "Projects",
+    script:
+      "Four projects, each solving a real architectural problem. Luna — a Django and Celery backend with modular LLM pipelines for an AI assistant. RunFog Dublin — a distributed fog computing simulation using AWS SQS, Lambda, and EventBridge. SmartTrack — a RESTful backend integrating four-plus external APIs with structured error handling and CloudWatch logging. DevOps E-learning — full CI/CD with GitHub Actions, pytest, and SonarQube resolving 50 percent of flagged vulnerabilities. Production thinking applied to every build.",
   },
   {
     id: "certificates",
     label: "Certificates",
     script:
-      "Every certificate here was earned in response to a gap Ronak noticed in himself. Azure before he fully understood cloud breadth. Multiple AWS credentials because one wasn't enough to feel confident. The IEEE publication because a final year project felt like it deserved to be scrutinized by a real technical audience. The pattern isn't certification hunting. It's someone who is genuinely uncomfortable not knowing things — and does something about it.",
+      "Six-plus credentials. Multiple AWS certifications. Azure Fundamentals. The IEEE publication — Multilingual Minutes of Meeting Generator for Offline Meetings — accepted at ICFT 2025 and indexed on IEEE Xplore. Each certification was pursued to validate a specific gap. The publication was chosen because peer review is a higher bar than a course certificate. The credentials reflect someone who tests their knowledge externally rather than just assuming it.",
   },
   {
     id: "achievements",
     label: "Achievements",
     script:
-      "The IEEE publication wasn't assigned. The hundred and fifty LeetCode problems weren't required. The hackathon placements weren't strategic networking. These are the things Ronak does when nobody is watching — because the standard he holds himself to doesn't change based on whether it's being evaluated. Consistency isn't something he performs. It's just how he operates.",
+      "One IEEE-published paper. Over 180 LeetCode problems solved — consistently, not in one pre-interview burst. Top-ten hackathon finishes. Fifty-plus self-directed cloud study hours logged outside of coursework. None of this was required. It's what happens when someone sets a personal standard and doesn't lower it when no one is watching. The pattern across all of it — competitive, academic, and technical — is the signal worth paying attention to.",
   },
   {
     id: "contact",
     label: "Contact",
     script:
-      "This is where intent becomes action. Ronak is actively targeting graduate software engineering roles, cloud support associate positions, and internships — in Dublin and beyond. He's not waiting for the perfect opportunity. He's building toward it, every day, and looking for an environment where he can contribute from the first sprint. The form, the email, LinkedIn, GitHub, and LeetCode are all here. The next move is yours. If you've watched this walkthrough to the end, you already know what you're getting. Reach out.",
+      "Open to work. 2026 graduate. Targeting software engineering, backend, and cloud roles in Dublin and internationally. Ready to contribute from sprint one — not after a three-month ramp-up. The contact form, email, LinkedIn, and GitHub are all here. If this walkthrough answered your questions about fit, the next move is yours.",
   },
 ];
 

@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
-import { Briefcase, Download, Github, Linkedin, MapPin } from "lucide-react";
+import { Download, Github, Linkedin, MapPin } from "lucide-react";
 import heroImage from "@/assets/hero-spider.jpg";
+
+const stats = [
+  { number: "3",    label: "Internships" },
+  { number: "2",    label: "Research Papers" },
+  { number: "6+",  label: "Certifications" },
+  { number: "180+", label: "LeetCode Solved" },
+];
 
 const HeroSection = () => {
   return (
@@ -11,7 +18,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>
 
-      {/* Web lines decoration */}
+      {/* Web lines */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(6)].map((_, i) => (
           <div
@@ -29,6 +36,8 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-6 text-center">
+
+        {/* Name + tagline */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,62 +50,88 @@ const HeroSection = () => {
             Ronak <span className="text-gradient-spider">Rajput</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
-            Software Engineer | Cloud Engineer | Problem Solver
+            Software Engineer · Cloud Engineer · Problem Solver
           </p>
-          <div className="mx-auto mb-6 inline-flex max-w-full flex-wrap items-center justify-center gap-x-3 gap-y-2 rounded-lg border border-primary/35 bg-card/80 px-4 py-2 text-xs font-semibold text-foreground shadow-[0_0_22px_rgba(239,68,68,0.16)] backdrop-blur-sm sm:text-sm">
-            <span className="inline-flex items-center gap-2">
-              <Briefcase size={15} className="text-primary" />
-              Open to graduate software engineering/cloud support associate roles
-            </span>
-            <span className="hidden h-4 w-px bg-border sm:block" />
-            <span className="inline-flex items-center gap-2 text-muted-foreground">
-              <MapPin size={15} className="text-primary" />
+
+          {/* Location + availability — inline, lightweight */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-8 text-sm">
+            <span className="flex items-center gap-1.5 text-muted-foreground/60">
+              <MapPin size={13} className="text-primary" />
               Ireland
+            </span>
+            <span className="w-px h-3.5 bg-border self-center" />
+            <span className="flex items-center gap-1.5 text-xs font-tech text-emerald-400">
+              <span className="relative flex h-1.5 w-1.5 flex-shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-70" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+              </span>
+              Open to Work · 2026 Graduate
             </span>
           </div>
         </motion.div>
 
-        {/* Social Links */}
+        {/* Quick Stats — horizontal strip, no cards */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="flex items-center justify-center gap-4 mb-8"
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="flex items-center justify-center divide-x divide-border/60 mb-8"
+        >
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.38 + i * 0.07 }}
+              className="px-4 md:px-7 text-center"
+            >
+              <p className="font-display text-2xl md:text-3xl text-primary leading-none">{stat.number}</p>
+              <p className="text-[10px] text-muted-foreground font-tech mt-1 leading-tight">{stat.label}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Social links */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.46, duration: 0.5 }}
+          className="flex items-center justify-center gap-3 mb-7"
         >
           <a
             href="https://www.linkedin.com/in/ronak-rajput-a748681b3/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-11 h-11 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
+            className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
             aria-label="LinkedIn"
           >
-            <Linkedin size={20} />
+            <Linkedin size={18} />
           </a>
           <a
             href="https://github.com/Ronakkk07?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-11 h-11 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
+            className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
             aria-label="GitHub"
           >
-            <Github size={20} />
+            <Github size={18} />
           </a>
           <a
             href="https://leetcode.com/u/ronakrajput1106/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-30 px-4 h-11 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all"
-            aria-label="LeetCode"
+            className="h-10 px-4 rounded-lg bg-card border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/40 transition-all text-sm font-tech"
           >
             LeetCode
           </a>
         </motion.div>
 
+        {/* CTA buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ delay: 0.56, duration: 0.5 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3"
         >
           <a
             href="#projects"
@@ -119,22 +154,6 @@ const HeroSection = () => {
             Get In Touch
           </a>
         </motion.div>
-
-        {/* Scroll indicator
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-1">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1.5 h-1.5 rounded-full bg-primary"
-            />
-          </div>
-        </motion.div> */}
       </div>
     </section>
   );
