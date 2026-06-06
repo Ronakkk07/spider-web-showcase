@@ -5,30 +5,18 @@ import { Github } from "lucide-react";
 const projects = [
   {
     number: "01",
-    title: "Luna Web Browser Agent",
-    subtitle: null as string | null,
+    title: "Intelligent Multi-Cloud LLM Router",
+    subtitle: " MSc Research Project Ongoing",
     bullets: [
-      "Built Django REST backend for assistant workflows (reminders, automation, user management) supporting 5+ workflow modules via modular API design.",
-      "Improved responsiveness by reducing synchronous delays using Celery and Redis for asynchronous task execution.",
-      " Designed AI pipelines integrating Whisper STT and LLMs with structured logging across multiple workflow stages for traceability.",
+      "Built router dispatching LLM requests across AWS EKS and Azure AKS, cutting latency-based routing overhead vs static baselines.",
+      "Designed Prometheus observability layer tracking cross-cloud throughput and latency, enabling real-time datadriven routing.",
+      " Evaluated router against round-robin and random baselines on 55K LMSYS Arena records,benchmarking costand accuracy",
     ],
-    tech: ["DjangoRestFramework", "Celery", "Redis", "Whisper STT", "LLMs", "AWS"],
-    github: "https://github.com/Ronakkk07/Luna_your_webbrowser_ai",
+    tech: [ "Kubernetes (EKS + AKS)", "Prometheus", "Python"],
+    github: "https://github.com/Ronakkk07/Intelligent-Multi-Cloud-LLM-Serving",
   },
   {
     number: "02",
-    title: "SmartTrack Trip Planner",
-    subtitle: null as string | null,
-    bullets: [
-      "Built scalable backend services integrating 4+ external APIs using AWS Lambda, S3, SSM, and DynamoDB.",
-      "Improved reliability with 40% fewer runtime errors through structured logging and error handling across backend systems.",
-      "Enhanced debugging efficiency by analyzing logs and AWS service interactions for faster issue resolution.",
-    ],
-    tech: ["AWS Lambda", "S3", "DynamoDB", "Django", "REST APIs", "CloudWatch"],
-    github: null as string | null,
-  },
-  {
-    number: "03",
     title: "RunFog Dublin",
     subtitle: "Fog & Distributed System",
     bullets: [
@@ -40,16 +28,40 @@ const projects = [
     github: "https://github.com/Ronakkk07/RunFog-Dublin",
   },
   {
-    number: "04",
-    title: "DevOps E-learning Platform",
+    number: "03",
+    title: "Luna Web Browser Agent",
     subtitle: null as string | null,
     bullets: [
-      "Developed automated CI/CD pipelines using GitHub Actions for testing, code quality checks, and deployment.",
-      "Integrated pytest, Django tests, and SonarQube to detect failures early, resolving 50% of vulnerability issues.",
-      "Debugged and resolved build, test, and deployment failures ensuring reliable application releases.",
+      "Built Django REST backend for assistant workflows (reminders, automation, user management) supporting 5+ workflow modules via modular API design.",
+      "Improved responsiveness by reducing synchronous delays using Celery and Redis for asynchronous task execution.",
+      " Designed AI pipelines integrating Whisper STT and LLMs with structured logging across multiple workflow stages for traceability.",
     ],
-    tech: ["GitHub Actions", "CI/CD", "SonarQube", "pytest"],
-    github: "https://github.com/RonakNCI/cloudlearn",
+    tech: ["DjangoRestFramework", "Celery", "Redis", "Whisper STT", "LLMs", "AWS"],
+    github: "https://github.com/Ronakkk07/Luna_your_webbrowser_ai",
+  },
+  {
+    number: "04",
+    title: "SIP Investment Calculator",
+    subtitle: null as string | null,
+    bullets: [
+      "Built an interactive SIP calculator with a ”what-if explorer” enabling dynamic scenario visualisation across unlimited user queries, eliminating static spreadsheet limitations.",
+      "Engineered structured Claude prompts to generate production-ready React/Vite components, cutting development time from 2 days to under 3 hours.",
+      " Unlike template-based calculators, delivers real-time compound interest visualisations with sub-100ms render performance.",
+    ],
+    tech: ["React", "Vite", "TypeScript", "Claude"],
+    github: "https://github.com/Ronakkk07/SIP-Compounding-Visualizer",
+  },
+  {
+    number: "05",
+    title: "SmartTrack Trip Planner",
+    subtitle: null as string | null,
+    bullets: [
+      "Built scalable backend services integrating 4+ external APIs using AWS Lambda, S3, SSM, and DynamoDB.",
+      "Improved reliability with 40% fewer runtime errors through structured logging and error handling across backend systems.",
+      "Enhanced debugging efficiency by analyzing logs and AWS service interactions for faster issue resolution.",
+    ],
+    tech: ["AWS Lambda", "S3", "DynamoDB", "Django", "REST APIs", "CloudWatch"],
+    github: null as string | null,
   },
 ];
 

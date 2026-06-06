@@ -7,20 +7,14 @@ const skillCategories = [
     title: "Software Development",
     icon: Code2,
     skills: [
-      "Python",
-      "Object-Oriented Programming",
-      "Data Structures & Algorithms",
-      "REST APIs",
-      "DjangoRestFramework",
-      "React",
-      "pytest",
+      "Python", "Object-Oriented Programming", "Data Structures & Algorithms", "REST APIs", "DjangoRestFramework", "React", "pytest", "unit testing", "LLMs",
     ],
   },
   {
     title: "Core Concepts",
     icon: Cpu,
     skills: [
-      "Linux Systems",
+      "Linux OS",
       "Operating Systems",
       "Networking (TCP/IP, DNS)",
       "OSI Model",
@@ -33,9 +27,8 @@ const skillCategories = [
     title: "Cloud Platforms & DevOps",
     icon: Cloud,
     skills: [
-      "Docker",
       "GitHub",
-      "CI/CD",
+      "CI/CD",  
       "Kubernetes",
       "Monitoring & Logging",
       "AWS (Lambda, SQS, S3, DynamoDB, CloudWatch)",
@@ -49,9 +42,7 @@ const skillCategories = [
     icon: Database,
     skills: [
       "PostgreSQL",
-      "MySQL",
       "DynamoDB",
-      "Relational Database Design",
       "Redis",
       "Celery",
     ],
