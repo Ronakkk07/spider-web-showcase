@@ -12,6 +12,7 @@ import AchievementsSection from "@/components/AchievementsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import VoiceWalkthrough from "@/components/VoiceWalkthrough";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -31,6 +32,7 @@ const Index = () => {
         <ContactSection />
       </main>
       <VoiceWalkthrough />
+      <ScrollToTop />
       <Footer />
     </div>
   );

@@ -58,10 +58,28 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchored sections so they don't hide under the fixed navbar */
+    scroll-padding-top: 5rem;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
     overflow-x: hidden;
+  }
+
+  /* Visible keyboard focus for interactive elements (links, buttons, inputs) */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: calc(var(--radius) - 4px);
   }
 
   h1, h2, h3 {
@@ -228,4 +246,19 @@
 
 .web-shot-burst::after {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Respect users who prefer reduced motion: calm all looping/decorative animation */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
